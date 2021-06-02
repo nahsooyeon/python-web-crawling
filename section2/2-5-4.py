@@ -18,10 +18,13 @@ html = """
 </div>
 </body></html>
 """
+
 soup = BeautifulSoup(html, 'html.parser')
-print('prettify',soup.prettify())
-h1 = soup.select_one("div#main > h1").string
+# print('prettify',soup.prettify())
+h1 = soup.select("div#main > h1")
 print("h1 =", h1)
+
+
 li_list = soup.select("div#main > ul.lecs > li")
 for li in li_list:
   print("li =", li.string)
