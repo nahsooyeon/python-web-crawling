@@ -20,6 +20,7 @@ soup = BeautifulSoup(html, "html.parser")
 naver = soup.find(id="naver")
 print("id:naver >> " + naver.string)
 
-li = soup.find_all(href=re.compile(r"^https://"))
+li = soup.find_all(href=re.compile(r"^https://")) # https:// 로  시작하는 rawdata
+print("li", li)
 for e in li:
     print(e.attrs['href'])
