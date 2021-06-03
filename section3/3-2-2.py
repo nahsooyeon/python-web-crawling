@@ -14,7 +14,8 @@ r = s.get('http://httpbin.org/get')
 #https://jsonplaceholder.typicode.com
 
 r = s.get('https://jsonplaceholder.typicode.com/posts/1')
-#print(r.text)
+# print(r.text)
+
 print(r.json())
 print(r.json().keys())
 print(r.json().values())

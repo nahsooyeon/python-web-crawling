@@ -18,9 +18,10 @@ with requests.Session() as s:
 
     login_req = s.post('https://user.ruliweb.com/member/login_proc', data=LOGIN_INFO)
     # HTML 소스 확인
-    #print('login_req',login_req.text)
+    # print('login_req',login_req.text)
     # HTTP Header 확인
-    #print('login_req',login_req.headers)
+    # print('login_req',login_req.headers)
+
 
     # Response 정상 확인
     if login_req.status_code == 200 and login_req.ok:
@@ -29,15 +30,15 @@ with requests.Session() as s:
 
         #예외 발생
         post_one.raise_for_status()
-        #print(post_one.text)
+        # print(post_one.text)
 
-        #BeautifulSoup 선언
+        # #BeautifulSoup 선언
         soup = BeautifulSoup(post_one.text, 'html.parser')
-        #print(soup.prettify())
+        # print(soup.prettify())
 
         article = soup.select_one("table:nth-child(1)").find_all('p')
-        #print(article)
-
+        print(article)
+        #
         for i in article:
             if i.span is not None and \
                     i.span.string is not None:
