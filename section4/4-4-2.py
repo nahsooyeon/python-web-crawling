@@ -43,5 +43,5 @@ with open('/Users/devpomme/Desktop/development/web-crawling/python_create_app_1/
         grade = ''
         for g in p['grade']:
             grade = grade + ' ' + str(g)
-        print('Grade:', grade.lstrip()) # 왼쪽 공백 제거
+        print('Grade:', grade.lstrip()) # 왼쪽 공백 제거 오른쪽공백제거: rstrip()
         print('')
