@@ -30,7 +30,6 @@ def car_func(selector):
 
 car_lambda = lambda q : print("car_lambda", soup.select_one(q).string)
 
-
 car_lambda("#gr")
 car_lambda("li#gr")
 car_lambda("ul > li#gr")
