@@ -20,10 +20,10 @@ driver.get('https://www.inflearn.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.
 time.sleep(5)
 driver.implicitly_wait(3)
 
-driver.find_element_by_name('log').send_keys('nahsooyeon@gmail.com')
+driver.find_element_by_name('log').send_keys('id')
 
 driver.implicitly_wait(3)
-driver.find_element_by_name('pwd').send_keys('Dmlansemf1!')
+driver.find_element_by_name('pwd').send_keys('pw')
 
 driver.implicitly_wait(3)
 # 로그인

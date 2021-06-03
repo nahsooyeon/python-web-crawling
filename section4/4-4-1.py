@@ -23,20 +23,21 @@ data['people'].append({
 
 #Dict(Json) -> Str
 e = json.dumps(data, indent=4)
-print(type(e))
+print(type(e)) # type: str
 print(e)
 
-#Str -> Dict(Json)
+#Str -> Dict(Json) 파이썬에서 쓰려면 loads 로 변환해줘야함
 d = json.loads(e)
-print(type(d))
+print(type(d)) # type: dict
 print(d)
 
-#json 파일 쓰기(dumps)
-with open('c:/section4/member.json','w') as outfile:
-    outfile.write(e)
-
+# #json 파일 쓰기(dumps)
+# with open('c:/section4/member.json','w') as outfile:
+#     outfile.write(e)
+#
 #json 파일 읽기(loads)
-with open('c:/section4/member.json', 'r') as infile:
+print('========json 파일 읽기(loads)=========')
+with open('/Users/devpomme/Desktop/development/web-crawling/python_create_app_1/section4/member.json', 'r') as infile:
     r = json.loads(infile.read())
     print('=====')
     #print(type(r))

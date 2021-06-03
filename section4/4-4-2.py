@@ -25,22 +25,23 @@ data['people'].append({
 #data = {'people': [{'name': 'Kim', 'from': 'Seoul', 'website': 'naver.com', 'grade': [95,77,89,91]}, {'name': 'Park', 'from': 'Busan', 'website': 'google.com', 'grade': [85,67,100,94]}, {'name': 'Lee', 'from': 'Incheon', 'website': 'daum.net', 'grade': [98,79,99,92]}]}
 
 #json 파일 쓰기(dump)
-with open('c:/section4/member.json','w') as outfile:
+with open('/Users/devpomme/Desktop/development/web-crawling/python_create_app_1/section4/member.json','w') as outfile:
     json.dump(data, outfile)
-
+#
 #json 파일 읽기(load)
-with open('c:/section4/member.json', 'r') as infile:
+with open('/Users/devpomme/Desktop/development/web-crawling/python_create_app_1/section4/member.json', 'r') as infile:
     r = json.load(infile)
+    # print(type(r))
+    # print(r)
     print('===================')
-    #print(type(r))
-    #print(r)
+
     for p in r['people']:
-        print('Name: ' + p['name'])
+        print('Name: ' +  p['name'])
         print('Website: ' + p['website'])
         print('From: ' + p['from'])
-        t = p['grade']
+        t = p['grade'] # 배
         grade = ''
-        for g in t:
+        for g in p['grade']:
             grade = grade + ' ' + str(g)
-        print('Grade:', grade.lstrip())
+        print('Grade:', grade.lstrip()) # 왼쪽 공백 제거
         print('')
